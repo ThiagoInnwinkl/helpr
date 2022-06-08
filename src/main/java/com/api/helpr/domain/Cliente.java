@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.api.helpr.domain.dtos.ClienteDTO;
 import com.api.helpr.domain.enums.Perfil;
 
 @Entity
@@ -16,7 +17,7 @@ public class Cliente extends Pessoa {
 	@OneToMany(mappedBy = "cliente")
 	private List<Chamado> chamados = new ArrayList<>();
 
-	public Cliente() {
+	public Cliente(ClienteDTO objDto) {
 		super();
 		addPerfils(Perfil.CLIENTE);
 	}
