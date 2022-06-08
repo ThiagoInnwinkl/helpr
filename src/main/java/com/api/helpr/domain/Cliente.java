@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.api.helpr.domain.dtos.ClienteDTO;
 import com.api.helpr.domain.enums.Perfil;
 
 @Entity
@@ -24,6 +25,10 @@ public class Cliente extends Pessoa {
 	public Cliente(Integer id, String nome, String cpf, String email, String senha) {
 		super(id, nome, cpf, email, senha);
 		addPerfils(Perfil.CLIENTE);
+	}
+
+	public Cliente(ClienteDTO objDto) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public List<Chamado> getChamados() {
