@@ -34,8 +34,15 @@ public class ClienteService {
 	}
 
 	private void validaCpfEEmail(ClienteDTO objDto) {
-		// TODO Auto-generated method stub
 		
+	}
+
+	public Cliente update(Integer id, ClienteDTO objDto) {
+		objDto.setId(id);
+		Cliente oldObj = findById(id);
+		validaCpfEEmail(objDto);
+		oldObj = new Cliente(objDto);
+		return repository.save(oldObj);
 	}
 
 }
